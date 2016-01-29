@@ -1,17 +1,30 @@
 describe('Pizza', function(){
   it("will let user order a large pizza", function(){
-    var testPizza = new Pizza("Large", "Pepperoni", 1)
+    var testPizza = new Pizza("Large", ["Pepperoni"], 1)
     expect(testPizza.pizzaSize).to.equal("Large");
-    expect(testPizza.topping).to.equal("Pepperoni");
+    expect(testPizza.toppings).to.eql(["Pepperoni"]);
     expect(testPizza.qty).to.equal(1);
   });
 
+  it("will list the toppings added by user", function() {
+    var testPizza = new Pizza("Large", ["Pepperoni", "Olives", "Sausage"], 1);
+    expect(testPizza.pickedToppings()).to.equal("Pepperoni, Olives, Sausage");
+  });
+
+  it("will count the list of toppings added by user", function() {
+    var testPizza = new Pizza("Small", ["Pepperoni", "Olives", "Sausage"], 1);
+    expect(testPizza.numberOfToppings()).to.equal(3);
+  });
+
   it("will create a $10 receipt if pizza is Medium size", function() {
-    var testPizza = new Pizza("Medium", "Pepperoni", 1)
+    var testPizza = new Pizza("Medium")
     expect(testPizza.price()).to.equal(10);  // we are looking for price
   });
 
-  // it("will create a 14")
+  // it("will create a $14 receipt if pizza is Medium size with one extra topping", function() {
+  //   var testPizza = new Pizza("Large", "Pepperoni")
+  //   expect(testPizza.price()).to.equal(12);  // toppings are $2 each
+  // });
 
 
 });
