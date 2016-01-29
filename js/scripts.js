@@ -7,6 +7,7 @@ function Pizza(pizzaSize, toppings, qty) {  // parameters: toppings is an array
 
 Pizza.prototype.pickedToppings = function() {
   var toppingsList = "";
+  var numberOfToppings = 0;   // The doesn't need to be here, but spec breaks if it's removed
 
   for (var i = 0; i < this.toppings.length; i++) {
     if (i === 0) {
@@ -19,24 +20,15 @@ Pizza.prototype.pickedToppings = function() {
   return toppingsList;
 }
 
-Pizza.prototype.numberOfToppings = function() {
-  var numberOfToppings = 0;  // all toppings $2 each
-
-  for (var i = 0; i < this.toppings.length; i++) {
-      numberOfToppings += 1;
-  }
-  return numberOfToppings;
-}
-
 Pizza.prototype.price = function() {
   var pizzaPrice = 8;  // small pizza with only cheese topping
 
   if (this.pizzaSize === "Small") {
-    return (pizzaPrice);
+    return ((pizzaPrice) + (this.toppings.length * 2));
   } else if (this.pizzaSize === "Medium") {
-    return (pizzaPrice + 2);
+    return ((pizzaPrice + 2) + (this.toppings.length * 2));
   } else if (this.pizzaSize === "Large") {
-    return (pizzaPrice + 4);
+    return ((pizzaPrice + 4) + (this.toppings.length * 2));
   } else {
 
   }
