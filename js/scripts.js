@@ -34,24 +34,46 @@ Pizza.prototype.price = function() {
   }
 }
 
-
-
-
-
-
-
-
-
 // User Interface Logic
-// $(document).ready(function() {
-//   $("form#IDselector").submit(function(event) {
+$(document).ready(function() {
+  $("form#pizzaForm").submit(function(event) {
+  // Radio Button
+    var size = $("input[name=size]:checked").val();
     var toppings = [];
-        $("select").each(function() {
-          if ($(this).val() === "yes") {
-            likes.push($(this).attr('id'));
-          }
-        });
+    var count = 0;
+  // Checkboxes
+      $.each($("input[name='pizzaTopping']"), function() {
+        if ($(this).is(':checked')) {
+          toppings[count] = $(this).val();
+          count++;
+        }
+    });
 
-//     event.preventDefault();
-//   });
-// });
+    var newPizzaOrder = new Pizza (size, toppings)
+
+    $(".yourOrder h3, .total, .toppingsList").empty();  // clear out previous order
+    $(".yourOrder h2").text("Your Order") 
+    $(".yourOrder h3").text("Pizza Size: " + newPizzaOrder.pizzaSize)  // print pizza size
+
+    for (var i = 0; i < newPizzaOrder.toppings.length; i++) {  // print pizza toppings
+      $(".toppingsList").append("<li>" + newPizzaOrder.toppings[i] + "</li>")
+    }
+
+    $(".total").append("Total Cost: $" + newPizzaOrder.price() + ".00")
+
+    event.preventDefault();
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+//

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title></title>
+    <title>Pizza Baby Bitch</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -14,7 +14,7 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>Header</h1>
+        <h1>Pizza Baby Bitch!</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
       </div>  <!-- /JUMBOTRON -->
 
@@ -22,25 +22,104 @@
       <div class="row">
         <div class="col-sm-12">
 
-  <!-- Form -->        
-          <form class="">
-            <div class="form-group">
-              <label for="">Lorem Ipsum Baby!:</label>
-              <input class="hotPuddin" type="text" name="name" value="">
+  <!-- Form -->
+          <form id="pizzaForm">
+
+  <!-- SIZE -->
+            <h4>Pizza Size</h4>
+            <div class="radio">
+              <label>  <!-- doesn't need for= or ID tag! JQ grabs checked name= tag -->
+                <input name="size" value="Small" type="radio">Small
+              </label>
             </div>
 
-            <div class="form-group">
-              <label for="">Lorem Ipsum Baby!:</label>
-              <input class="hotPuddin" type="text" name="name" value="">
+            <div class="radio">
+              <label>
+                <input name="size" value="Medium" type="radio">Medium
+              </label>
             </div>
 
-            <button class="btn btn-info" type="submit" name="button">Gimme some sugar baby</button>
+            <div class="radio">
+              <label>
+                <input name="size" value="Large" type="radio">Large
+              </label>
+            </div>
+
+
+  <!-- TOPPINGS -->
+            <h4>Pick Your Toppings</h4>
+            <h5 class="italic grey">check all that apply</h5>
+
+            <div class="checkbox">
+              <label for="extraCheese">
+                <input id="extraCheese" name="pizzaTopping" type="checkbox" value="Extra Cheese">Extra Cheese Baby!</label>
+            </div>
+
+            <div class="checkbox">
+              <label for="pepperoni">
+                <input id="pepperoni" name="pizzaTopping" type="checkbox" value="Pepperoni">Pepperoni</label>
+            </div>
+
+            <div class="checkbox">
+              <label for="sausage">
+                <input id="sausage" name="pizzaTopping" type="checkbox" value="Sausage">Sausage</label>
+            </div>
+
+            <div class="checkbox">
+              <label for="jalapenos">
+                <input id="jalapenos" name="pizzaTopping" type="checkbox" value="Jalapenos">Jalapenos</label>
+            </div>
+
+            <div class="checkbox">
+              <label for="jellyBeans">
+                <input id="jellyBeans" name="pizzaTopping" type="checkbox" value="Jelly Beans">Jelly Beans</label>
+            </div>
+
+            <div class="checkbox">
+              <label for="mayonaise">
+                <input id="mayonaise" name="pizzaTopping" type="checkbox" value="Mayonaise">Mayonaise</label>
+            </div>
+
+            <div class="checkbox">
+              <label for="olives">
+                <input id="olives" name="pizzaTopping" type="checkbox" value="Olives">Olives</label>
+            </div>
+
+            <div class="checkbox">
+              <label for="pineapple">
+                <input id="pineapple" name="pizzaTopping" type="checkbox" value="Pineapple">Pineapple</label>
+            </div>
+
+            <!-- <div class="form-group">
+              <label for="">Lorem Ipsum Baby!:</label>
+              <input class="hotPuddin" type="text" name="name" value="">
+            </div> -->
+
+            <button class="btn btn-info" type="submit" name="button">Price My Pizza Baby Bitch</button>
           </form>
+
+          <div class="row results">
+            <div class="col-sm-12 yourOrder">
+              <h2></h2>
+              <h3></h3>
+              <ul class="toppingsList">
+              </ul>
+              <h4 class="total"></h4>
+            </div>
+          </div>
 
         </div>  <!-- /col-sm-12 -->
       </div>  <!-- /Row -->
 
     </div>  <!-- /Container -->
+
+
+
+
+
+
+
+
 
   </body>
 </html>
