@@ -34,7 +34,9 @@ Pizza.prototype.price = function() {
   }
 }
 
-// User Interface Logic
+
+// User Interface Logic ===========================
+
 $(document).ready(function() {
   $("form#pizzaForm").submit(function(event) {
   // Radio Button
@@ -51,8 +53,8 @@ $(document).ready(function() {
 
     var newPizzaOrder = new Pizza (size, toppings)
 
-    $(".yourOrder h3, .total, .toppingsList").empty();  // clear out previous order
-    $(".yourOrder h2").text("Your Order") 
+    $(".yourOrder h3, .total, .toppingsList, .images").empty();  // clear out previous order
+    $(".yourOrder h2").text("Your Order")
     $(".yourOrder h3").text("Pizza Size: " + newPizzaOrder.pizzaSize)  // print pizza size
 
     for (var i = 0; i < newPizzaOrder.toppings.length; i++) {  // print pizza toppings
@@ -60,6 +62,8 @@ $(document).ready(function() {
     }
 
     $(".total").append("Total Cost: $" + newPizzaOrder.price() + ".00")
+
+    $(".images").append("<img src='images/Pepperoni.jpg'>")
 
     event.preventDefault();
   });
