@@ -63,7 +63,7 @@ $(document).ready(function() {
 
     $(".total").append("Total Cost: $" + newPizzaOrder.price() + ".00")
 
-    $(".images").append("<img src='images/Pepperoni.jpg'>")
+    $(".images").append("<img src='images/pepperoni.jpg'>")
 
     event.preventDefault();
   });
