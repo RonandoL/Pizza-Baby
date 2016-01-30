@@ -10,7 +10,7 @@
 
 _Site allows user to pick size of pizza and selection of toppings. A receipt spits out with the list of ingredients and total price of pizza._
 
-## Known Bugs
+## Known Bugs 
 
 _{No known bugs at this point in time}_
 
